@@ -1,0 +1,103 @@
+$bg-color: #1a202c;
+$text-color: #ffffff;
+$accent-color: #38a169;
+$hover-color: darken($accent-color, 10%);
+
+body {
+    background-color: $bg-color;
+    color: $text-color;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: lighten($bg-color, 5%);
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+        }
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+
+        li a {
+            color: $accent-color;
+            text-decoration: none;
+            &:hover {
+                color: $hover-color;
+            }
+        }
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    animation: fadeIn 2s ease-in;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero-content {
+        max-width: 600px;
+        margin-bottom: 2rem;
+        animation: fadeIn 2s ease-in;
+
+        h2 {
+            font-size: 2.5rem;
+            color: $accent-color;
+            animation: fadeIn 3s ease-in;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 4s ease-in;
+        }
+
+        button {
+            background-color: $accent-color;
+            color: $text-color;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: fadeIn 5s ease-in;  // Mueve esta línea fuera del &:hover
+        }
+
+        button:hover {
+            background-color: $hover-color;
+        }
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 3s ease-in;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: lighten($bg-color, 5%);
+    margin-top: 2rem;
+}
